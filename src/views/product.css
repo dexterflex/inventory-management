@@ -1,0 +1,41 @@
+nav {
+    background-color: transparent !important;
+    box-shadow: 0 0 10px #a2a2a2 !important;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+
+
+table {
+    background-color: #0a000ed9;
+    color: white;
+    min-width: fit-content;
+    width: 100%;
+}
+
+
+
+tr {
+    border-bottom: 1px solid grey;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+th {
+    color: wheat;
+}
+
+td {
+    vertical-align: top;
+}
+
+img {
+    width: 80px;
+    height: auto;
+}
