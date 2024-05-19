@@ -7,6 +7,12 @@ import path from 'path';
 const app = express()
 
 
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+// Set the directory where the template files are located
+app.set('views', path.join(path.resolve(), 'src', 'views'));
+
 // Middleware to serve static files
 app.use(express.static(path.join(path.resolve(), 'src', 'views')));
 

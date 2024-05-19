@@ -11,7 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="product.css">
-    <title>Document</title>
+    <title>Inventory Management</title>
 </head>
 
 <body>
@@ -54,28 +54,18 @@
                 </tr>
             </thead>
             <tbody>
+                <% products.forEach(product=>{ %>
                 <tr>
-                    <td>1</td>
-                    <td>Product 1</td>
-                    <td>Description of Product 1</td>
-                    <td>$ 19.99</td>
-                    <td><img src="https://tuningjohn.com/wp-content/uploads/2020/07/Atomic-Habits-front-cover.png"
-                            alt=""></td>
+                    <td><%= product.id %></td>
+                    <td><%= product.title %></td>
+                    <td><%= product.desc %></td>
+                    <td>$ <%= product.price %></td>
+                    <td><img src="<%= product.imageUrl %>" alt=""></td>
                     <td><button class="btn btn-warning my-2">Edit</button>
                         <button class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Product 1</td>
-                    <td>Description of Product 1</td>
-                    <td>$ 19.99</td>
-                    <td><img src="https://i.guim.co.uk/img/media/94560f671d3027e1ee4449f6cb4c4cf33d63a723/0_0_323_499/master/323.jpg?width=140&dpr=2&s=none"
-                            alt=""></td>
-                    <td><button class="btn btn-warning my-2">Edit</button>
-                        <button class="btn btn-danger ">Delete</button>
-                    </td>
-                </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
