@@ -1,6 +1,7 @@
 import express from 'express';
 import productController from './src/controllers/product.controller.js';
 import path from 'path';
+import expressLayouts from 'express-ejs-layouts';
 
 
 // express app 
@@ -12,6 +13,9 @@ app.set('view engine', 'ejs');
 
 // Set the directory where the template files are located
 app.set('views', path.join(path.resolve(), 'src', 'views'));
+
+// Use express-ejs-layouts
+app.use(expressLayouts);
 
 // Middleware to serve static files
 app.use(express.static(path.join(path.resolve(), 'src', 'views')));
