@@ -1,7 +1,7 @@
 import express from 'express';
 import productController from './src/controllers/product.controller.js';
 import path from 'path';
-import expressLayouts from 'express-ejs-layouts';
+import ejsLayouts from 'express-ejs-layouts';
 
 
 // express app 
@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(path.resolve(), 'src', 'views'));
 
 // Use express-ejs-layouts
-app.use(expressLayouts);
+app.use(ejsLayouts);
 
 // Middleware to serve static files
 app.use(express.static(path.join(path.resolve(), 'src', 'views')));
@@ -25,6 +25,7 @@ app.use(express.static(path.join(path.resolve(), 'src', 'views')));
 const product = new productController()
 app.get('/', product.getProducts);
 
+app.get('/new', product.addProduct);
 
 const PORT = 3000;
 app.listen(PORT, (err) => {
