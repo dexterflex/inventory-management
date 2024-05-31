@@ -11,9 +11,23 @@ export default class productModel {
     static get() {
         return products;
     }
-    static add({ title, desc, price, imageUrl }) {
+    static getById(id) {
+        return products.find(p => p.id == id);
+    }
+    static add(title, desc, price, imageUrl) {
         let newProduct = new productModel(products.length + 1, title, desc, price, imageUrl);
         products.push(newProduct);
+        return products;
+    }
+    static update(id, title, desc, price, imageUrl) {
+        let index = products.findIndex(p => p.id == id);
+        products[index] = new productModel(id, title, desc, price, imageUrl);
+        return products;
+    }
+    static delete(id) {
+        let index = products.findIndex(p => p.id == id);
+        products.splice(index, 1)
+        return products;
     }
 }
 
