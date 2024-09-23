@@ -1,12 +1,12 @@
 
 
 export default class productModel {
-    constructor(_id, _name, _desc, _price, _imageUrl) {
+    constructor(_id, _name, _desc, _price, _image) {
         this.id = _id
         this.title = _name
         this.desc = _desc
         this.price = _price
-        this.imageUrl = _imageUrl
+        this.image = _image
     }
     static get() {
         return products;
@@ -14,14 +14,14 @@ export default class productModel {
     static getById(id) {
         return products.find(p => p.id == id);
     }
-    static add(title, desc, price, imageUrl) {
-        let newProduct = new productModel(products.length + 1, title, desc, price, imageUrl);
+    static add(title, desc, price, image) {
+        let newProduct = new productModel(products.length + 1, title, desc, price, image);
         products.push(newProduct);
         return products;
     }
-    static update(id, title, desc, price, imageUrl) {
+    static update(id, title, desc, price, image) {
         let index = products.findIndex(p => p.id == id);
-        products[index] = new productModel(id, title, desc, price, imageUrl);
+        products[index] = new productModel(id, title, desc, price, image);
         return products;
     }
     static delete(id) {

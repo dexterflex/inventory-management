@@ -1,4 +1,11 @@
 <h2>Update Product</h2>
+<% if(errors){ %>
+<% errors.map(error=>{ %>
+<div class="alert alert-danger" role="alert">
+    <%= error.msg %>
+</div>
+<% }) %>
+<% } %>
 <form action="/post-update" method="post" enctype="multipart/form-data">
 
     <input type="hidden" class="form-control" id="productId" name="id" placeholder="Enter product ID"
@@ -21,7 +28,7 @@
     </div>
     <div class="mb-3">
         <label for="productUrl" class="form-label">URL</label>
-        <input type="file" class="form-control" id="productUrl" name="imageUrl" placeholder="Enter product URL"
+        <input type="file" class="form-control" id="productUrl" name="image" placeholder="Enter product URL"
             value="<%= product.imageUrl %>">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
